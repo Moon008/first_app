@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FirstApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- New header -->
+<header class="nanvbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container">
+			<%=link_to "FirstApp", "#", ID:"logo" %>
+		</div>
+	</div>
+</header>
+<div class="container">
+	<%= yield %>
+	<!-- New footer -->
+	<footer class="footer">
+	<small>
+		<a href="sdfzz.com">SDFZZ Group</a>
+	</small>
+	</footer>
+<!-- Debugging footer -->
+	<%= debug(params) if Rails.env.developmernt? %>
+</div>
+
+</body>
+</html>
